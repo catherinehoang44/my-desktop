@@ -1,0 +1,19 @@
+<svg width="65" height="52" viewBox="0 0 65 52" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_1624_40243)">
+<rect x="6" width="52" height="52" fill="url(#pattern0_1624_40243)"/>
+<rect x="51" y="56" width="32" height="32" transform="rotate(-90 51 56)" fill="url(#pattern1_1624_40243)"/>
+</g>
+<defs>
+<pattern id="pattern0_1624_40243" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_1624_40243" transform="scale(0.03125)"/>
+</pattern>
+<pattern id="pattern1_1624_40243" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image1_1624_40243" transform="scale(0.03125)"/>
+</pattern>
+<clipPath id="clip0_1624_40243">
+<rect width="65" height="52" fill="white"/>
+</clipPath>
+<image id="image0_1624_40243" width="32" height="32" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACrElEQVR4AdyXsWqqQRCFB1PlAQJpAqnyFIF0aUNeIWkC1qJgYyNiKwi+hq2dIFjbWikKCoKtIEgu38KRZRxz/3itbuC4e3Zn5pzZ/f+gJXN/rVbr+xpwZc/SEwNEVioVq9VqR/yWU6NUKn0z/g2hgZubm5R3OBzS+FtOUrPZtCImQgOXCssoBj4/P62IidCACl1qBAN3d3dWxERo4FJhGccAKGIiNKBCPxkpl8sm+HjEWQP39/dWr9dZCp+J0EAR4UajYf1+PxX++PhIZhBkgbeGGsJ+v7f1es3WCUIDKkQBMsTpGGHWqtWqvb6+2m63g6aRfYjifT57HqEBnyhOMveK6GAwsOl0are3twns9Xo9BlO8N5I23UdowCfC6a7b7dpms7F2u21vb2+plK4BQ19fX0YsYNMbYc0jNOATxZXMKTw8PNjT09PRyOPjo00mkxSieG8kbbqP0IBPFOcUEOcUVIfrkPBsNkvLivdG0qb7CA34RHG6fn5+tvf393T/1OIZkDAcKN4bYc8jNOAT4dz/YrE45iMM0TMgE4gTzx5zRnHmHqEBnyieJ+vYuXs9kKvVKoUoXsLiadN9hAZ8onin0zE6FXgNmfP6Ic4/HOorXsLi7HmEBnxizpfLpc3nc0NwPB6nEWFiJMQcIc9Z8wgN+MSII1JUWPleHB4aoDibSrwWp6ZHaEDCBPPavby8GKNQlHvj1PMIDSiR4NFoZMPh0BiFolyN5PWomSM0kCfSddGOiQWKl7Dq5cKahwbyRLou2jGxQPESVj2J5mNoIE/MO2IO1CFzcI5LWPVyYc1DA3li3hFzoA6Zg3Ncwqon0XwMDeSJP3XIHvi/T4Djyk/kXzi5HuEV6M6uJax6XhweGthut+m7H998wDU4YhFODPAjgh8T10JeJzLwBwAA//+Tyb7CAAAABklEQVQDADGO7tfNFFs1AAAAAElFTkSuQmCC"/>
+<image id="image1_1624_40243" width="32" height="32" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4Ae3BQQrCQBBFwfcG73/lbwdchCGohEY3XcX4N9mkcGJJoVhotrigonKmkkKzxQcpvKik0Eg2KSrvJMFCg8UNKik0WNyQBAsNHlxIwk7lkAQLv5QC5ECzxZeSYGGMMcYYY4xmTxSDNAr8S+vdAAAAAElFTkSuQmCC"/>
+</defs>
+</svg>

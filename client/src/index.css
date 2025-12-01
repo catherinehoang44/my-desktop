@@ -1,0 +1,33 @@
+/* Dogica Pixel font - uncomment and add font files to src/fonts/ if you have them
+@font-face {
+    font-family: 'Dogica Pixel';
+    src: url('../fonts/Dogica.woff2') format('woff2'),
+         url('../fonts/Dogica.woff') format('woff'),
+         url('../fonts/Dogica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dogica Pixel', 'Courier New', monospace;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #2c2c2c;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
