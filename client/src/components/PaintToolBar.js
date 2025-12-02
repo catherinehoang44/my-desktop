@@ -13,7 +13,7 @@ const PaintToolBar = ({ onToolChange, untitledName, onUntitledChange, onRestartC
   const imgPen = "https://www.figma.com/api/mcp/asset/690c6fda-42cb-4d2c-aeba-5541b227c3fc";
   const imgUnion = "https://www.figma.com/api/mcp/asset/d54b6e1c-f9e3-4252-87d4-2e9d97b4d373";
   const imgHand = "https://www.figma.com/api/mcp/asset/9abc006b-7d20-46f3-8f37-efccb221e0a4";
-  const imgComment = "https://www.figma.com/api/mcp/asset/030707a1-40ea-45ee-a7b2-c9458b128f27";
+  // imgComment removed - not currently used
 
   const handleToolClick = (toolName) => {
     if (toolName === 'menu') {

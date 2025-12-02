@@ -289,6 +289,9 @@ function App() {
           setShowAbout(true);
         }
         break;
+      default:
+        // No action for other menu names
+        break;
     }
   };
 

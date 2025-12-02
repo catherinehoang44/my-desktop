@@ -10,7 +10,7 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
   const [minimizedWindows, setMinimizedWindows] = useState([]);
   const [closedPaintWindows, setClosedPaintWindows] = useState({}); // Store paint state by window type
   const [paintWindowStates, setPaintWindowStates] = useState({}); // Store paint state by window id
-  const [musicWindowMuteHandler, setMusicWindowMuteHandler] = useState(null);
+  const [, setMusicWindowMuteHandler] = useState(null); // Setter used, value not needed
   
   // Notify parent of window count changes
   useEffect(() => {
@@ -108,6 +108,7 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
     };
 
     loadDesktopItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getIconForType = (type) => {
@@ -134,11 +135,7 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
     return item.icon;
   };
 
-  const handleIconMove = (type, newX, newY) => {
-    setDesktopItems(prev => prev.map(item => 
-      item.type === type ? { ...item, x: newX, y: newY } : item
-    ));
-  };
+  // handleIconMove removed - desktop icons are not draggable
 
   const handleIconClick = (type, name) => {
     // Single click only selects the icon (unless editing)
@@ -381,10 +378,6 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
       // Generate a unique type for the new folder
       const newFolderType = `folder-${Date.now()}`;
       
-      // Calculate position for new folder (avoid overlapping with existing items)
-      const existingXPositions = desktopItems.map(item => item.x);
-      const existingYPositions = desktopItems.map(item => item.y);
-      
       // Find a position that doesn't overlap (simple grid placement)
       let newX = 20;
       let newY = 20;
@@ -392,8 +385,11 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
       const maxAttempts = 100;
       
       while (attempts < maxAttempts) {
+        // Use a closure-safe check for overlaps
+        const checkX = newX;
+        const checkY = newY;
         const overlaps = desktopItems.some(item => 
-          Math.abs(item.x - newX) < 100 && Math.abs(item.y - newY) < 100
+          Math.abs(item.x - checkX) < 100 && Math.abs(item.y - checkY) < 100
         );
         if (!overlaps) break;
         

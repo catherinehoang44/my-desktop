@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import ImagesGrid from './ImagesGrid';
 import PaintToolBar from './PaintToolBar';
 import PaintArea from './PaintArea';
-import ChildhoodImage from './ChildhoodImage';
+// ChildhoodImage import removed - not currently used
 import MusicContainer from './MusicContainer';
 import ConfirmationDialog from './ConfirmationDialog';
 import KindMsgsForm from './KindMsgsForm';
@@ -45,7 +45,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
   const [paintObjects, setPaintObjects] = useState(initialPaintState?.objects || []); // Store objects from PaintArea
   const paintAreaRef = useRef(null);
   const [editingLayer, setEditingLayer] = useState(null);
-  const [editingUntitled, setEditingUntitled] = useState(false);
+  // editingUntitled removed - not currently used
   const [untitledName, setUntitledName] = useState(initialPaintState?.untitledName || 'untitled');
   
   // Music rotation state - tracks which song is at index 0
@@ -339,7 +339,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
         onMusicWindowOpen(null, false);
       }
     };
-  }, [isMusic, isMuted]);
+  }, [isMusic, isMuted, onMusicWindowOpen]);
   
   // Handle play/pause
   const handlePlayPause = () => {
@@ -497,31 +497,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
     }
   }, [isMusic, size.width, size.height, id, onResize]);
 
-  // Handle image size for images window - adjust window to hug image
-  const handleImageSize = (imgWidth, imgHeight) => {
-    if (type === 'images' && onResize) {
-      // Image should fill width of content container (window width - 14px padding - 6px borders)
-      const borderWidth = 3;
-      const horizontalPadding = 7 * 2; // 7px left + 7px right
-      const headerHeight = 37; // Folder header height
-      
-      // Calculate available width for image
-      const availableWidth = window.innerWidth * 0.5; // Start with 50% of screen width
-      const imageAspectRatio = imgWidth / imgHeight;
-      const targetImageHeight = availableWidth / imageAspectRatio;
-      
-      // Content container size (image fills width)
-      const contentWidth = availableWidth;
-      const contentHeight = targetImageHeight;
-      
-      // Window size = content container + padding + borders
-      const totalWidth = contentWidth + (borderWidth * 2) + horizontalPadding;
-      const totalHeight = contentHeight + headerHeight + (borderWidth * 2);
-      
-      setSize({ width: totalWidth, height: totalHeight });
-      onResize(id, totalWidth, totalHeight);
-    }
-  };
+  // handleImageSize removed - not currently used
 
   // Update music header height for content container positioning (7px under music base img)
   useEffect(() => {
@@ -834,7 +810,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isDragging, isResizing, resizeHandle, dragOffset, resizeStart, id, onMove, onResize, size.width, size.height]);
+  }, [isDragging, isResizing, resizeHandle, dragOffset, resizeStart, id, onMove, onResize, size.width, size.height, position.x, position.y]);
 
   const getWindowContent = () => {
     switch (type) {

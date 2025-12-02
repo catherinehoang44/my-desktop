@@ -20,7 +20,7 @@ const PaintArea = React.forwardRef(({ selectedTool, onToolChange, currentLayer, 
   const [isMoving, setIsMoving] = useState(false);
   const [moveStart, setMoveStart] = useState({ x: 0, y: 0 });
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const canvasRef = useRef(null);
+  // canvasRef removed - not currently used
   const containerRef = useRef(null);
   
   // Expose containerRef to parent via ref
@@ -301,7 +301,7 @@ const PaintArea = React.forwardRef(({ selectedTool, onToolChange, currentLayer, 
     
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedTool, selectedObjectId, objects]);
+  }, [selectedTool, selectedObjectId, objects, currentLayer]);
 
   // Update cursor based on tool
   useEffect(() => {
@@ -332,12 +332,11 @@ const PaintArea = React.forwardRef(({ selectedTool, onToolChange, currentLayer, 
       });
     };
     
-    if (containerRef.current) {
-      containerRef.current.addEventListener('mousemove', handleMouseMove);
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('mousemove', handleMouseMove);
       return () => {
-        if (containerRef.current) {
-          containerRef.current.removeEventListener('mousemove', handleMouseMove);
-        }
+        container.removeEventListener('mousemove', handleMouseMove);
       };
     }
   }, [selectedTool]);
