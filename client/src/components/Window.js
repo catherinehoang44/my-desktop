@@ -810,7 +810,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isDragging, isResizing, resizeHandle, dragOffset, resizeStart, id, onMove, onResize, size.width, size.height, position.x, position.y]);
+  }, [isDragging, isResizing, resizeHandle, dragOffset, resizeStart, id, onMove, onResize, size.width, size.height, position.x, position.y, isMusic]);
 
   const getWindowContent = () => {
     switch (type) {
