@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import ImagesGrid from './ImagesGrid';
 import PaintToolBar from './PaintToolBar';
 import PaintArea from './PaintArea';
@@ -303,6 +303,15 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
     };
   }, [isMusic, currentSong, songRotationOffset]);
   
+  // Mute toggle handler
+  const handleMuteToggle = useCallback(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = !audioRef.current.muted;
+      setIsMuted(audioRef.current.muted);
+      console.log('🎵 Mute toggled:', audioRef.current.muted ? 'MUTED' : 'UNMUTED');
+    }
+  }, []);
+  
   // Handle mute/unmute with 'm' key
   useEffect(() => {
     if (!isMusic) return;
@@ -317,16 +326,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  }, [isMusic]);
-  
-  // Mute toggle handler
-  const handleMuteToggle = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = !audioRef.current.muted;
-      setIsMuted(audioRef.current.muted);
-      console.log('🎵 Mute toggled:', audioRef.current.muted ? 'MUTED' : 'UNMUTED');
-    }
-  };
+  }, [isMusic, handleMuteToggle]);
   
   // Register mute handler when music window opens and update on mute state change
   useEffect(() => {

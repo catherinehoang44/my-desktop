@@ -35,8 +35,6 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
     }
   };
   
-  const [desktopHeight, setDesktopHeight] = useState(getDesktopHeight());
-  
   const [desktopItems, setDesktopItems] = useState(() => {
     const bottomY = getBottomIconY();
     return [
@@ -57,7 +55,6 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
     // Update desktop height and icon positions on resize
     const handleResize = () => {
       const newHeight = getDesktopHeight();
-      setDesktopHeight(newHeight);
       const newBottomY = newHeight - 100;
       
       setDesktopItems(prev => prev.map(item => {
