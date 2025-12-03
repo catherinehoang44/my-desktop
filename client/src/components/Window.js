@@ -339,7 +339,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
         onMusicWindowOpen(null, false);
       }
     };
-  }, [isMusic, isMuted, onMusicWindowOpen]);
+  }, [isMusic, isMuted, onMusicWindowOpen, handleMuteToggle]);
   
   // Handle play/pause
   const handlePlayPause = () => {
