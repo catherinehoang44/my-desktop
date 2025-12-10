@@ -1025,7 +1025,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
 
   const getBarBackground = () => {
     if (isMusic) {
-      return '/music-base.png';
+      return `${process.env.PUBLIC_URL}/music-base.png`;
     }
     // For folder/recycle/images, use the folder bar background
     return "https://www.figma.com/api/mcp/asset/6c116bd5-55b4-4ab3-b842-5a2a7ec65e6a";
@@ -1094,12 +1094,12 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
             {isMusic ? (
               <>
                 <img 
-                  src="/music-base.png" 
+                  src={`${process.env.PUBLIC_URL}/music-base.png`}
                   alt="music base" 
                   className="music-bar-image"
                 />
                 <img 
-                  src="/music-bar-bg.png" 
+                  src={`${process.env.PUBLIC_URL}/music-bar-bg.png`}
                   alt="music bar background" 
                   className="music-bar-bg-image"
                 />
@@ -1124,7 +1124,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
             ) : isWeb ? (
               <>
                 <img 
-                  src="/music-bar-bg.png" 
+                  src={`${process.env.PUBLIC_URL}/music-bar-bg.png`}
                   alt="web bar background" 
                   className="folder-bar-image"
                 />

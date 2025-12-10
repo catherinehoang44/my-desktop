@@ -64,7 +64,7 @@ const MusicContainer = ({ currentSong, onForward, onBack, onPlayPause, isPlaying
           <div className="music-option-rotated">
             <div className="music-option-icon">
               <img alt="Music" src="https://www.figma.com/api/mcp/asset/1a971149-6cc3-45b8-8c7f-23d84057268f" />
-              <img alt="Music Icon" src="/music-icon.svg" className="music-icon-overlay" />
+              <img alt="Music Icon" src={`${process.env.PUBLIC_URL}/music-icon.svg`} className="music-icon-overlay" />
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ const MusicContainer = ({ currentSong, onForward, onBack, onPlayPause, isPlaying
           <div className="music-option-rotated">
             <div className="music-option-icon">
               <img alt="Back" src="https://www.figma.com/api/mcp/asset/2783f422-b189-4f49-a2c0-7304de7929af" />
-              <img alt="Back Arrow" src="/back-arrow.svg" className="music-icon-overlay" />
+              <img alt="Back Arrow" src={`${process.env.PUBLIC_URL}/back-arrow.svg`} className="music-icon-overlay" />
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@ const MusicContainer = ({ currentSong, onForward, onBack, onPlayPause, isPlaying
             <div className="music-option-icon">
               <img alt="Pause/Play" src="https://www.figma.com/api/mcp/asset/2783f422-b189-4f49-a2c0-7304de7929af" />
               {isPlaying ? (
-                <img alt="Pause Icon" src="/pause-icon.svg" className="music-icon-overlay" />
+                <img alt="Pause Icon" src={`${process.env.PUBLIC_URL}/pause-icon.svg`} className="music-icon-overlay" />
               ) : (
                 <svg className="music-icon-overlay" viewBox="0 0 16 16" style={{ imageRendering: 'pixelated' }}>
                   {/* Play icon - triangle pointing right */}
@@ -140,7 +140,7 @@ const MusicContainer = ({ currentSong, onForward, onBack, onPlayPause, isPlaying
           <div className="music-option-rotated">
             <div className="music-option-icon">
               <img alt="Forward" src="https://www.figma.com/api/mcp/asset/2783f422-b189-4f49-a2c0-7304de7929af" />
-              <img alt="Forward Arrow" src="/forward-arrow.svg" className="music-icon-overlay" />
+              <img alt="Forward Arrow" src={`${process.env.PUBLIC_URL}/forward-arrow.svg`} className="music-icon-overlay" />
             </div>
           </div>
         </div>

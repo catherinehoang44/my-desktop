@@ -23,10 +23,10 @@ const ImagesGrid = () => {
 
   // Web files data (4 items)
   const webFiles = [
-    { name: 'Curiosity Quench', icon: '/web-icon.svg' },
-    { name: 'Game of Life', icon: '/web-icon.svg' },
-    { name: 'Old Portfolio', icon: '/web-icon.svg' },
-    { name: 'Whose Cat', icon: '/web-icon.svg' }
+    { name: 'Curiosity Quench', icon: `${process.env.PUBLIC_URL}/web-icon.svg` },
+    { name: 'Game of Life', icon: `${process.env.PUBLIC_URL}/web-icon.svg` },
+    { name: 'Old Portfolio', icon: `${process.env.PUBLIC_URL}/web-icon.svg` },
+    { name: 'Whose Cat', icon: `${process.env.PUBLIC_URL}/web-icon.svg` }
   ];
 
   // Image names in order
@@ -67,7 +67,7 @@ const ImagesGrid = () => {
           {displayImages.map((image, index) => (
             <div key={image._id || index} className="grid-item image-item">
               <div className="grid-item-icon">
-                <img src="/img-icon.svg" alt={imageNames[index] || 'Image'} />
+                <img src={`${process.env.PUBLIC_URL}/img-icon.svg`} alt={imageNames[index] || 'Image'} />
               </div>
               <div className="grid-item-label">
                 {imageNames[index] || 'Image'}
@@ -81,7 +81,7 @@ const ImagesGrid = () => {
             return (
               <div key={`placeholder-${index}`} className="grid-item image-item placeholder">
                 <div className="grid-item-icon">
-                  <img src="/img-icon.svg" alt={imageNames[imageIndex] || 'Empty'} />
+                  <img src={`${process.env.PUBLIC_URL}/img-icon.svg`} alt={imageNames[imageIndex] || 'Empty'} />
                 </div>
                 <div className="grid-item-label">{imageNames[imageIndex] || 'Empty'}</div>
               </div>

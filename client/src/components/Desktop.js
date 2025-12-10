@@ -39,15 +39,15 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
     const bottomY = getBottomIconY();
     return [
       // First row: folder, doc, web
-      { type: 'folder', name: 'Past Lives', icon: '/folder-closed.png', x: 20, y: 20, isBottom: false },
-      { type: 'doc', name: 'Kind Msgs', icon: '/doc-icon.svg', x: 120, y: 20, isBottom: false },
-      { type: 'web', name: 'My Reads', icon: '/web-icon.svg', x: 220, y: 20, isBottom: false },
+      { type: 'folder', name: 'Past Lives', icon: `${process.env.PUBLIC_URL}/folder-closed.png`, x: 20, y: 20, isBottom: false },
+      { type: 'doc', name: 'Kind Msgs', icon: `${process.env.PUBLIC_URL}/doc-icon.svg`, x: 120, y: 20, isBottom: false },
+      { type: 'web', name: 'My Reads', icon: `${process.env.PUBLIC_URL}/web-icon.svg`, x: 220, y: 20, isBottom: false },
       // Second row: paint, audio
-      { type: 'paint', name: 'Paint', icon: '/paint-icon.svg', x: 20, y: 128, isBottom: false },
-      { type: 'audio', name: 'Nostalgia', icon: '/audio-icon.svg', x: 120, y: 128, isBottom: false },
+      { type: 'paint', name: 'Paint', icon: `${process.env.PUBLIC_URL}/paint-icon.svg`, x: 20, y: 128, isBottom: false },
+      { type: 'audio', name: 'Nostalgia', icon: `${process.env.PUBLIC_URL}/audio-icon.svg`, x: 120, y: 128, isBottom: false },
       // Bottom right: img, recycle (will be positioned dynamically)
-      { type: 'images', name: 'Childhood', icon: '/img-icon.svg', x: getBottomIconX(false), y: bottomY, isBottom: true },
-      { type: 'recycle', name: 'Recycle Bin', icon: '/recycle-icon.svg', x: getBottomIconX(true), y: bottomY, isBottom: true }
+      { type: 'images', name: 'Childhood', icon: `${process.env.PUBLIC_URL}/img-icon.svg`, x: getBottomIconX(false), y: bottomY, isBottom: true },
+      { type: 'recycle', name: 'Recycle Bin', icon: `${process.env.PUBLIC_URL}/recycle-icon.svg`, x: getBottomIconX(true), y: bottomY, isBottom: true }
     ];
   });
 
@@ -110,15 +110,15 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
 
   const getIconForType = (type) => {
     const icons = {
-      paint: '/paint-icon.svg',
-      folder: '/folder-closed.png',
-      doc: '/doc-icon.svg',
-      web: '/web-icon.svg',
-      audio: '/audio-icon.svg',
-      recycle: '/recycle-icon.svg',
-      images: '/img-icon.svg'
+      paint: `${process.env.PUBLIC_URL}/paint-icon.svg`,
+      folder: `${process.env.PUBLIC_URL}/folder-closed.png`,
+      doc: `${process.env.PUBLIC_URL}/doc-icon.svg`,
+      web: `${process.env.PUBLIC_URL}/web-icon.svg`,
+      audio: `${process.env.PUBLIC_URL}/audio-icon.svg`,
+      recycle: `${process.env.PUBLIC_URL}/recycle-icon.svg`,
+      images: `${process.env.PUBLIC_URL}/img-icon.svg`
     };
-    return icons[type] || '/doc-icon.svg';
+    return icons[type] || `${process.env.PUBLIC_URL}/doc-icon.svg`;
   };
 
   const getIconPath = (item) => {
@@ -127,7 +127,7 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
       const isOpen = openWindows.some(window => 
         (window.type === 'folder' || window.type.startsWith('folder-')) && window.name === item.name
       );
-      return isOpen ? '/folder-open.png' : '/folder-closed.png';
+      return isOpen ? `${process.env.PUBLIC_URL}/folder-open.png` : `${process.env.PUBLIC_URL}/folder-closed.png`;
     }
     return item.icon;
   };
@@ -402,7 +402,7 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
       const newFolder = {
         type: newFolderType,
         name: 'New Folder',
-        icon: '/folder-closed.png',
+        icon: `${process.env.PUBLIC_URL}/folder-closed.png`,
         x: newX,
         y: newY,
         isBottom: false
