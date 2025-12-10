@@ -63,12 +63,12 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
   
   // All 6 songs based on audio file names with their audio file paths
   const allSongs = [
-    { title: 'Opening Theme', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound0-OpeningTheme.mp3` },
-    { title: 'Dragon Realms', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound1-DragonRealms.mp3` },
-    { title: 'Dragonfly Dojo', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound2-DragonflyDojo.mp3` },
-    { title: 'Luau Island', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound3-LuauIsland.mp3` },
-    { title: 'Cloud 9', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound4-Cloud9.mp3` },
-    { title: 'Peaceful Ice Slider', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound5-PeacefulIceSlider.mp3` }
+    { title: 'Opening Theme', artist: 'Spyro', audioFile: '/sound0-OpeningTheme.mp3' },
+    { title: 'Dragon Realms', artist: 'Spyro', audioFile: '/sound1-DragonRealms.mp3' },
+    { title: 'Dragonfly Dojo', artist: 'Spyro', audioFile: '/sound2-DragonflyDojo.mp3' },
+    { title: 'Luau Island', artist: 'Spyro', audioFile: '/sound3-LuauIsland.mp3' },
+    { title: 'Cloud 9', artist: 'Spyro', audioFile: '/sound4-Cloud9.mp3' },
+    { title: 'Peaceful Ice Slider', artist: 'Spyro', audioFile: '/sound5-PeacefulIceSlider.mp3' }
   ];
   
   // Get rotated songs array based on current offset
@@ -95,12 +95,12 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
     // Load metadata for all songs to get their durations
     const loadDurations = async () => {
       const songs = [
-        { title: 'Opening Theme', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound0-OpeningTheme.mp3` },
-        { title: 'Dragon Realms', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound1-DragonRealms.mp3` },
-        { title: 'Dragonfly Dojo', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound2-DragonflyDojo.mp3` },
-        { title: 'Luau Island', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound3-LuauIsland.mp3` },
-        { title: 'Cloud 9', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound4-Cloud9.mp3` },
-        { title: 'Peaceful Ice Slider', artist: 'Spyro', audioFile: `${process.env.PUBLIC_URL}/sound5-PeacefulIceSlider.mp3` }
+        { title: 'Opening Theme', artist: 'Spyro', audioFile: '/sound0-OpeningTheme.mp3' },
+        { title: 'Dragon Realms', artist: 'Spyro', audioFile: '/sound1-DragonRealms.mp3' },
+        { title: 'Dragonfly Dojo', artist: 'Spyro', audioFile: '/sound2-DragonflyDojo.mp3' },
+        { title: 'Luau Island', artist: 'Spyro', audioFile: '/sound3-LuauIsland.mp3' },
+        { title: 'Cloud 9', artist: 'Spyro', audioFile: '/sound4-Cloud9.mp3' },
+        { title: 'Peaceful Ice Slider', artist: 'Spyro', audioFile: '/sound5-PeacefulIceSlider.mp3' }
       ];
       
       const durationPromises = songs.map((song) => {
@@ -1025,7 +1025,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
 
   const getBarBackground = () => {
     if (isMusic) {
-      return `${process.env.PUBLIC_URL}/music-base.png`;
+      return '/music-base.png';
     }
     // For folder/recycle/images, use the folder bar background
     return "https://www.figma.com/api/mcp/asset/6c116bd5-55b4-4ab3-b842-5a2a7ec65e6a";
@@ -1094,12 +1094,12 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
             {isMusic ? (
               <>
                 <img 
-                  src={`${process.env.PUBLIC_URL}/music-base.png`}
+                  src="/music-base.png"
                   alt="music base" 
                   className="music-bar-image"
                 />
                 <img 
-                  src={`${process.env.PUBLIC_URL}/music-bar-bg.png`}
+                  src="/music-bar-bg.png"
                   alt="music bar background" 
                   className="music-bar-bg-image"
                 />
@@ -1124,7 +1124,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
             ) : isWeb ? (
               <>
                 <img 
-                  src={`${process.env.PUBLIC_URL}/music-bar-bg.png`}
+                  src="/music-bar-bg.png"
                   alt="web bar background" 
                   className="folder-bar-image"
                 />

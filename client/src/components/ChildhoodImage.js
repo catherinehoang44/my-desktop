@@ -7,7 +7,7 @@ const ChildhoodImage = ({ onImageLoad }) => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = `${process.env.PUBLIC_URL}/spyro-enter-the-dragonfly-ps2.png`;
+    img.src = '/spyro-enter-the-dragonfly-ps2.png';
     img.onload = () => {
       const ratio = img.naturalWidth / img.naturalHeight;
       setAspectRatio(ratio);

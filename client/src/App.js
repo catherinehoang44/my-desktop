@@ -26,11 +26,11 @@ function App() {
     // Set CSS variable for scrollbar background image
     document.documentElement.style.setProperty(
       '--scrollbar-bg-image',
-      `url(${process.env.PUBLIC_URL}/scroll-bar-bg.png)`
+      `url(/scroll-bar-bg.png)`
     );
 
     // Load audio file
-    const audioPath = `${process.env.PUBLIC_URL}/click.mp3`;
+    const audioPath = '/click.mp3';
     const audio = new Audio(audioPath);
     
     // Set up audio

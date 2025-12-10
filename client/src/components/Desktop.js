@@ -37,18 +37,17 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
   
   const [desktopItems, setDesktopItems] = useState(() => {
     const bottomY = getBottomIconY();
-    const publicUrl = process.env.PUBLIC_URL || '';
     return [
       // First row: folder, doc, web
-      { type: 'folder', name: 'Past Lives', icon: `${publicUrl}/folder-closed.png`, x: 20, y: 20, isBottom: false },
-      { type: 'doc', name: 'Kind Msgs', icon: `${publicUrl}/doc-icon.svg`, x: 120, y: 20, isBottom: false },
-      { type: 'web', name: 'My Reads', icon: `${publicUrl}/web-icon.svg`, x: 220, y: 20, isBottom: false },
+      { type: 'folder', name: 'Past Lives', icon: '/folder-closed.png', x: 20, y: 20, isBottom: false },
+      { type: 'doc', name: 'Kind Msgs', icon: '/doc-icon.svg', x: 120, y: 20, isBottom: false },
+      { type: 'web', name: 'My Reads', icon: '/web-icon.svg', x: 220, y: 20, isBottom: false },
       // Second row: paint, audio
-      { type: 'paint', name: 'Paint', icon: `${publicUrl}/paint-icon.svg`, x: 20, y: 128, isBottom: false },
-      { type: 'audio', name: 'Nostalgia', icon: `${publicUrl}/audio-icon.svg`, x: 120, y: 128, isBottom: false },
+      { type: 'paint', name: 'Paint', icon: '/paint-icon.svg', x: 20, y: 128, isBottom: false },
+      { type: 'audio', name: 'Nostalgia', icon: '/audio-icon.svg', x: 120, y: 128, isBottom: false },
       // Bottom right: img, recycle (will be positioned dynamically)
-      { type: 'images', name: 'Childhood', icon: `${publicUrl}/img-icon.svg`, x: getBottomIconX(false), y: bottomY, isBottom: true },
-      { type: 'recycle', name: 'Recycle Bin', icon: `${publicUrl}/recycle-icon.svg`, x: getBottomIconX(true), y: bottomY, isBottom: true }
+      { type: 'images', name: 'Childhood', icon: '/img-icon.svg', x: getBottomIconX(false), y: bottomY, isBottom: true },
+      { type: 'recycle', name: 'Recycle Bin', icon: '/recycle-icon.svg', x: getBottomIconX(true), y: bottomY, isBottom: true }
     ];
   });
 
@@ -110,17 +109,16 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
   }, []);
 
   const getIconForType = (type) => {
-    const publicUrl = process.env.PUBLIC_URL || '';
     const icons = {
-      paint: `${publicUrl}/paint-icon.svg`,
-      folder: `${publicUrl}/folder-closed.png`,
-      doc: `${publicUrl}/doc-icon.svg`,
-      web: `${publicUrl}/web-icon.svg`,
-      audio: `${publicUrl}/audio-icon.svg`,
-      recycle: `${publicUrl}/recycle-icon.svg`,
-      images: `${publicUrl}/img-icon.svg`
+      paint: '/paint-icon.svg',
+      folder: '/folder-closed.png',
+      doc: '/doc-icon.svg',
+      web: '/web-icon.svg',
+      audio: '/audio-icon.svg',
+      recycle: '/recycle-icon.svg',
+      images: '/img-icon.svg'
     };
-    return icons[type] || `${publicUrl}/doc-icon.svg`;
+    return icons[type] || '/doc-icon.svg';
   };
 
   const getIconPath = (item) => {
@@ -129,8 +127,7 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
       const isOpen = openWindows.some(window => 
         (window.type === 'folder' || window.type.startsWith('folder-')) && window.name === item.name
       );
-      const publicUrl = process.env.PUBLIC_URL || '';
-      return isOpen ? `${publicUrl}/folder-open.png` : `${publicUrl}/folder-closed.png`;
+      return isOpen ? '/folder-open.png' : '/folder-closed.png';
     }
     return item.icon;
   };
@@ -405,7 +402,7 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
       const newFolder = {
         type: newFolderType,
         name: 'New Folder',
-        icon: `${process.env.PUBLIC_URL || ''}/folder-closed.png`,
+        icon: '/folder-closed.png',
         x: newX,
         y: newY,
         isBottom: false
@@ -606,7 +603,7 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
       className="desktop"
       onClick={handleDesktopClick}
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL}/retro-site-bg.png)`,
+        backgroundImage: `url(/retro-site-bg.png)`,
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',

@@ -525,7 +525,7 @@ const PaintArea = React.forwardRef(({ selectedTool, onToolChange, currentLayer, 
         {/* Custom pen cursor (50% of original size, top-left corner at drawing point) */}
         {selectedTool === 'pen' && (
           <img
-            src={`${process.env.PUBLIC_URL}/pen.svg`}
+            src="/pen.svg"
             alt=""
             style={{
               position: 'absolute',
