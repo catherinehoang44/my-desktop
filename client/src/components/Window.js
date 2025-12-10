@@ -1097,11 +1097,23 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
                   src="/music-base.png"
                   alt="music base" 
                   className="music-bar-image"
+                  onError={(e) => {
+                    console.error('Failed to load music-base.png:', e.target.src);
+                  }}
+                  onLoad={() => {
+                    console.log('music-base.png loaded successfully');
+                  }}
                 />
                 <img 
                   src="/music-bar-bg.png"
                   alt="music bar background" 
                   className="music-bar-bg-image"
+                  onError={(e) => {
+                    console.error('Failed to load music-bar-bg.png:', e.target.src);
+                  }}
+                  onLoad={() => {
+                    console.log('music-bar-bg.png loaded successfully');
+                  }}
                 />
                 <p className="folder-bar-title">{name}</p>
                 <div className="folder-x-btn-container">
