@@ -457,6 +457,7 @@
   position: relative;
   width: 100%;
   height: var(--music-base-height, auto);
+  min-height: 73px; /* Fallback to natural height of music-base.png */
   object-fit: fill;
   object-position: top center;
   pointer-events: none;
@@ -470,7 +471,8 @@
   right: 7px;
   top: 7px;
   width: calc(100% - 14px);
-  height: var(--music-bar-bg-height-locked, auto);
+  height: var(--music-bar-bg-height-locked, 30px); /* Fallback to natural height of music-bar-bg.png */
+  min-height: 30px;
   object-fit: fill;
   object-position: top center;
   pointer-events: none;
