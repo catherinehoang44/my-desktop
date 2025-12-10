@@ -63,7 +63,7 @@ const MusicContainer = ({ currentSong, onForward, onBack, onPlayPause, isPlaying
         <div className="music-option-item">
           <div className="music-option-rotated">
             <div className="music-option-icon">
-              <img alt="Music" src="https://www.figma.com/api/mcp/asset/1a971149-6cc3-45b8-8c7f-23d84057268f" />
+              <img alt="Music" src="https://www.figma.com/api/mcp/asset/919229da-3ef1-4b8e-b60e-80131d4de18c" />
               <img alt="Music Icon" src="/music-icon.svg" className="music-icon-overlay" />
             </div>
           </div>
@@ -72,7 +72,7 @@ const MusicContainer = ({ currentSong, onForward, onBack, onPlayPause, isPlaying
       <div className="music-title-artist-wrapper">
         <div className="music-option-rotated">
           <div className="music-title-artist">
-            <img alt="Title/Artist" src="https://www.figma.com/api/mcp/asset/c9fc6553-11e9-4be8-a836-fa4ec1f30a0f" />
+            <img alt="Title/Artist" src="https://www.figma.com/api/mcp/asset/087ad46d-157e-44f0-94af-0d2731c5339a" />
             <div className="music-title-artist-text">
               <span className="music-song-title">{currentSong?.title}</span>
               <span className="music-time-display">
@@ -116,7 +116,7 @@ const MusicContainer = ({ currentSong, onForward, onBack, onPlayPause, isPlaying
         <div className="music-option-item back-music-container" onClick={onBack} style={{ cursor: 'pointer' }}>
           <div className="music-option-rotated">
             <div className="music-option-icon">
-              <img alt="Back" src="https://www.figma.com/api/mcp/asset/2783f422-b189-4f49-a2c0-7304de7929af" />
+              <img alt="Back" src="https://www.figma.com/api/mcp/asset/295b63c0-ced4-48d0-87f9-9817b303b6bf" />
               <img alt="Back Arrow" src="/back-arrow.svg" className="music-icon-overlay" />
             </div>
           </div>
@@ -124,7 +124,7 @@ const MusicContainer = ({ currentSong, onForward, onBack, onPlayPause, isPlaying
         <div className="music-option-item pause-play-container" onClick={onPlayPause} style={{ cursor: 'pointer' }}>
           <div className="music-option-rotated">
             <div className="music-option-icon">
-              <img alt="Pause/Play" src="https://www.figma.com/api/mcp/asset/2783f422-b189-4f49-a2c0-7304de7929af" />
+              <img alt="Pause/Play" src="https://www.figma.com/api/mcp/asset/771c163e-779b-40be-a37d-f259c8288c2d" />
               {isPlaying ? (
                 <img alt="Pause Icon" src="/pause-icon.svg" className="music-icon-overlay" />
               ) : (
@@ -139,7 +139,7 @@ const MusicContainer = ({ currentSong, onForward, onBack, onPlayPause, isPlaying
         <div className="music-option-item forward-music-container" onClick={onForward} style={{ cursor: 'pointer' }}>
           <div className="music-option-rotated">
             <div className="music-option-icon">
-              <img alt="Forward" src="https://www.figma.com/api/mcp/asset/2783f422-b189-4f49-a2c0-7304de7929af" />
+              <img alt="Forward" src="https://www.figma.com/api/mcp/asset/d18e6de6-26c5-4045-9a63-9b98ffd691ba" />
               <img alt="Forward Arrow" src="/forward-arrow.svg" className="music-icon-overlay" />
             </div>
           </div>
