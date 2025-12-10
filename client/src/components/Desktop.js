@@ -37,17 +37,18 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
   
   const [desktopItems, setDesktopItems] = useState(() => {
     const bottomY = getBottomIconY();
+    const publicUrl = process.env.PUBLIC_URL || '';
     return [
       // First row: folder, doc, web
-      { type: 'folder', name: 'Past Lives', icon: `${process.env.PUBLIC_URL}/folder-closed.png`, x: 20, y: 20, isBottom: false },
-      { type: 'doc', name: 'Kind Msgs', icon: `${process.env.PUBLIC_URL}/doc-icon.svg`, x: 120, y: 20, isBottom: false },
-      { type: 'web', name: 'My Reads', icon: `${process.env.PUBLIC_URL}/web-icon.svg`, x: 220, y: 20, isBottom: false },
+      { type: 'folder', name: 'Past Lives', icon: `${publicUrl}/folder-closed.png`, x: 20, y: 20, isBottom: false },
+      { type: 'doc', name: 'Kind Msgs', icon: `${publicUrl}/doc-icon.svg`, x: 120, y: 20, isBottom: false },
+      { type: 'web', name: 'My Reads', icon: `${publicUrl}/web-icon.svg`, x: 220, y: 20, isBottom: false },
       // Second row: paint, audio
-      { type: 'paint', name: 'Paint', icon: `${process.env.PUBLIC_URL}/paint-icon.svg`, x: 20, y: 128, isBottom: false },
-      { type: 'audio', name: 'Nostalgia', icon: `${process.env.PUBLIC_URL}/audio-icon.svg`, x: 120, y: 128, isBottom: false },
+      { type: 'paint', name: 'Paint', icon: `${publicUrl}/paint-icon.svg`, x: 20, y: 128, isBottom: false },
+      { type: 'audio', name: 'Nostalgia', icon: `${publicUrl}/audio-icon.svg`, x: 120, y: 128, isBottom: false },
       // Bottom right: img, recycle (will be positioned dynamically)
-      { type: 'images', name: 'Childhood', icon: `${process.env.PUBLIC_URL}/img-icon.svg`, x: getBottomIconX(false), y: bottomY, isBottom: true },
-      { type: 'recycle', name: 'Recycle Bin', icon: `${process.env.PUBLIC_URL}/recycle-icon.svg`, x: getBottomIconX(true), y: bottomY, isBottom: true }
+      { type: 'images', name: 'Childhood', icon: `${publicUrl}/img-icon.svg`, x: getBottomIconX(false), y: bottomY, isBottom: true },
+      { type: 'recycle', name: 'Recycle Bin', icon: `${publicUrl}/recycle-icon.svg`, x: getBottomIconX(true), y: bottomY, isBottom: true }
     ];
   });
 
@@ -109,16 +110,17 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
   }, []);
 
   const getIconForType = (type) => {
+    const publicUrl = process.env.PUBLIC_URL || '';
     const icons = {
-      paint: `${process.env.PUBLIC_URL}/paint-icon.svg`,
-      folder: `${process.env.PUBLIC_URL}/folder-closed.png`,
-      doc: `${process.env.PUBLIC_URL}/doc-icon.svg`,
-      web: `${process.env.PUBLIC_URL}/web-icon.svg`,
-      audio: `${process.env.PUBLIC_URL}/audio-icon.svg`,
-      recycle: `${process.env.PUBLIC_URL}/recycle-icon.svg`,
-      images: `${process.env.PUBLIC_URL}/img-icon.svg`
+      paint: `${publicUrl}/paint-icon.svg`,
+      folder: `${publicUrl}/folder-closed.png`,
+      doc: `${publicUrl}/doc-icon.svg`,
+      web: `${publicUrl}/web-icon.svg`,
+      audio: `${publicUrl}/audio-icon.svg`,
+      recycle: `${publicUrl}/recycle-icon.svg`,
+      images: `${publicUrl}/img-icon.svg`
     };
-    return icons[type] || `${process.env.PUBLIC_URL}/doc-icon.svg`;
+    return icons[type] || `${publicUrl}/doc-icon.svg`;
   };
 
   const getIconPath = (item) => {
@@ -127,7 +129,8 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
       const isOpen = openWindows.some(window => 
         (window.type === 'folder' || window.type.startsWith('folder-')) && window.name === item.name
       );
-      return isOpen ? `${process.env.PUBLIC_URL}/folder-open.png` : `${process.env.PUBLIC_URL}/folder-closed.png`;
+      const publicUrl = process.env.PUBLIC_URL || '';
+      return isOpen ? `${publicUrl}/folder-open.png` : `${publicUrl}/folder-closed.png`;
     }
     return item.icon;
   };
@@ -402,7 +405,7 @@ const Desktop = ({ onMusicWindowStateChange, onMuteToggle, onCloseTopWindow, onW
       const newFolder = {
         type: newFolderType,
         name: 'New Folder',
-        icon: `${process.env.PUBLIC_URL}/folder-closed.png`,
+        icon: `${process.env.PUBLIC_URL || ''}/folder-closed.png`,
         x: newX,
         y: newY,
         isBottom: false
