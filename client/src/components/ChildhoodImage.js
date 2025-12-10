@@ -37,7 +37,7 @@ const ChildhoodImage = ({ onImageLoad }) => {
     >
       <img 
         ref={imgRef}
-        src={`${process.env.PUBLIC_URL}/spyro-enter-the-dragonfly-ps2.png`} 
+        src="/spyro-enter-the-dragonfly-ps2.png" 
         alt="Spyro Enter the Dragonfly PS2"
         className="childhood-image"
         onLoad={handleImageLoad}

@@ -81,7 +81,7 @@ const ImagesGrid = () => {
             return (
               <div key={`placeholder-${index}`} className="grid-item image-item placeholder">
                 <div className="grid-item-icon">
-                  <img src={`${process.env.PUBLIC_URL}/img-icon.svg`} alt={imageNames[imageIndex] || 'Empty'} />
+                  <img src="/img-icon.svg" alt={imageNames[imageIndex] || 'Empty'} />
                 </div>
                 <div className="grid-item-label">{imageNames[imageIndex] || 'Empty'}</div>
               </div>
