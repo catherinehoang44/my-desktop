@@ -1041,7 +1041,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
         >
           <div className="paint-bar-bg">
             <img 
-              src="https://www.figma.com/api/mcp/asset/4f8c94fb-a17f-4e99-9be9-54387d21236f" 
+              src="https://www.figma.com/api/mcp/asset/75fca64a-1632-44d6-84e7-b7322cba9925" 
               alt="paint bar" 
               className="paint-bar-image"
             />
@@ -1055,7 +1055,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
         </div>
       );
     } else if (isDoc) {
-      const docBarBg = "https://www.figma.com/api/mcp/asset/a27e0125-8a95-440b-b33d-c835f8fe09e2";
+      const docBarBg = "https://www.figma.com/api/mcp/asset/f2837280-b783-4ee4-a393-c2bd69d3628d";
       return (
         <div 
           className="window-header-doc"

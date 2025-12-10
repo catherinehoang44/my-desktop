@@ -6,13 +6,13 @@ const PaintToolBar = ({ onToolChange, untitledName, onUntitledChange, onRestartC
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
   
-  const imgMenuBurger = "https://www.figma.com/api/mcp/asset/1b037a62-2610-4553-b4e9-060a11f3a211";
-  const imgSelect = "https://www.figma.com/api/mcp/asset/aaeae489-6c06-47d2-bc30-ea3ebf5a8443";
-  const imgFrame = "https://www.figma.com/api/mcp/asset/4d40240d-b546-4b80-bb31-bd6bfe9b79c7";
-  const imgShape = "https://www.figma.com/api/mcp/asset/38a3458c-bd31-43b6-8049-11be79156efa";
-  const imgPen = "https://www.figma.com/api/mcp/asset/690c6fda-42cb-4d2c-aeba-5541b227c3fc";
-  const imgUnion = "https://www.figma.com/api/mcp/asset/d54b6e1c-f9e3-4252-87d4-2e9d97b4d373";
-  const imgHand = "https://www.figma.com/api/mcp/asset/9abc006b-7d20-46f3-8f37-efccb221e0a4";
+  const imgMenuBurger = "https://www.figma.com/api/mcp/asset/681c24d4-5054-46cd-a9e2-6a011eff5c6d";
+  const imgSelect = "https://www.figma.com/api/mcp/asset/43e3eed8-4cbb-45b8-8de3-7f93c5d38615";
+  const imgFrame = "https://www.figma.com/api/mcp/asset/d37b7e16-ac6f-482f-ab9c-e9871f46b19d";
+  const imgShape = "https://www.figma.com/api/mcp/asset/07d6b638-e648-4bac-ab98-df7d3065c6d0";
+  const imgPen = "https://www.figma.com/api/mcp/asset/af6a6114-7eed-493d-809e-05d3a793a56d";
+  const imgUnion = "https://www.figma.com/api/mcp/asset/53a22476-89c7-4b11-8cbd-fc41d73e0734";
+  const imgHand = "https://www.figma.com/api/mcp/asset/303d6ef6-f1d8-44a5-be91-5c5cadc2a73d";
   // imgComment removed - not currently used
 
   const handleToolClick = (toolName) => {
