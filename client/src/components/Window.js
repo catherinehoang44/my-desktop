@@ -1028,7 +1028,7 @@ const Window = ({ id, type, name, onClose, onMinimize, x, y, width, height, zInd
       return '/music-base.png';
     }
     // For folder/recycle/images, use the folder bar background
-    return "https://www.figma.com/api/mcp/asset/6c116bd5-55b4-4ab3-b842-5a2a7ec65e6a";
+    return '/folder-bar-bg.png';
   };
 
   const renderHeader = () => {
